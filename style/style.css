@@ -1,0 +1,79 @@
+/*
+CSS - Каскадные таблицы стилей - дает возможность описать браузеру внешний вид веб-страниц
+
+. - указывает класс (class)
+# - указывает идентификатор (id)
+*/
+body {
+	font-family: tahoma; /* Семейство шрифтов */
+}
+
+div.theme h1{
+	color: #2aa52a; /* Цвет текста */
+	text-align: center; /* Горизонтальное выравнивание текста в пределах элемента. Применяется: ко всем элементам */
+}
+
+div.FlexTop {
+	display: grid;
+	grid-template-columns: 1fr 0.7fr 1fr;
+}
+
+div.topic {
+	/*Работа с конкретным элементом сетки*/
+	justify-self: center; /*Выравнивание по горизонтали*/
+	align-self: center; /*Выравнивание по вертикали*/
+}
+
+.abbreviations {
+	grid-row-start: 1;
+	padding-top: 2%;
+	padding-left: 2%;
+	border-top: solid #eda024;
+	border-left: solid #eda024;
+}
+
+.abbreviations h4{
+	margin-top: 0;
+}
+
+div.new, div.crime, div.cancel {
+	margin-top: 2%;
+	text-align: center;
+}
+
+div.FlexItem {
+	display: flex;
+	justify-content: space-around; /* Равномерно распределяет все элементы по ширине flex-блока. Все элементы имеют полноразмерное пространство с обоих концов */
+	text-align: center;
+	
+}
+
+button {
+	min-width: 150px;
+	max-width: 200px;
+	min-height: 35px;
+	max-height: 35px;
+}
+
+@media (min-width: 1400px) {
+	div.FlexItem>div {
+		max-width: 700px;
+		min-width: 700px;
+	}
+}
+
+@media (max-width: 1399px) {
+	div.FlexItem {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 600px) {
+	div.FlexTop{
+		grid-template-columns: 1fr;
+	}
+	
+	.topic {
+		grid-row-start: -2;
+	}
+}
