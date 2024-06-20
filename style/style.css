@@ -73,7 +73,7 @@ button {
 }
 
 
-@media (max-width: 667px) {
+@media (max-width: 667px), only screen and (max-device-width: 667px) {
 	div.FlexTop{
 		grid-template-columns: 1fr;
 	}
@@ -87,16 +87,3 @@ button {
 	}
 }
 
-@media only screen and (max-device-width: 667px) {
-	div.FlexTop{
-		grid-template-columns: 1fr;
-	}
-	
-	.topic {
-		grid-row-start: -2;
-	}
-	
-	img {
-		height: 150px;
-	}
-}
