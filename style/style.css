@@ -48,6 +48,10 @@ div.FlexItem {
 	
 }
 
+img {
+	height: 150px;
+}
+
 button {
 	min-width: 150px;
 	max-width: 200px;
@@ -68,12 +72,31 @@ button {
 	}
 }
 
-@media (max-width: 750px) {
+
+@media (max-width: 667px) {
 	div.FlexTop{
 		grid-template-columns: 1fr;
 	}
 	
 	.topic {
 		grid-row-start: -2;
+	}
+	
+	img {
+		height: 150px;
+	}
+}
+
+@media only screen and (max-device-width: 667px) {
+	div.FlexTop{
+		grid-template-columns: 1fr;
+	}
+	
+	.topic {
+		grid-row-start: -2;
+	}
+	
+	img {
+		height: 150px;
 	}
 }
