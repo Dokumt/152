@@ -1,42 +1,66 @@
 /*
 CSS - Каскадные таблицы стилей - дает возможность описать браузеру внешний вид веб-страниц
+Каскадность — это приоритет одних правил/стилей над другими.
 
-. - указывает класс (class)
-# - указывает идентификатор (id)
+. - указывает класс (class)        Одинаковый стиль оформления планируется применять к нескольким элементам
+# - указывает идентификатор (id)   Элемент встречается на странице лишь один раз
+
+padding - внутренний отступ       (до границы)
+margin - внешний отступ (поле)    (после границы)
+
+Элементы <div> позволяют создать логическое выделение(группировка) содержимого блочного уровня
+Элементы <span> дают возможность логически выделить(группировка) строчное содержимое
+
+Наследование
+div h1 - наследует все элементы (потомки) <h1> блока <div>
+div > h1 - наследует только те (дочерний элемент) <h1>,которые являются непосредственными детьми элемента <div>
+
+Если браузер располагает два строчных элемента один за другим... - и у этих элементов есть поля, то браузер сложит размер полей
+Если браузер располагает два блочных элемента один под другим, он превращает их поля в одно. Высота полученного поля равняется высоте большего из двух полей.
 */
 body {
-	font-family: tahoma; /* Семейство шрифтов */
+	
+	font: medium Tahoma, sans-serif; /*Размер шрифта и Семейство шрифтов */
 }
 
-div.theme h1{
+#theme h1{
 	color: #2aa52a; /* Цвет текста */
 	text-align: center; /* Горизонтальное выравнивание текста в пределах элемента. Применяется: ко всем элементам */
 }
 
 div.FlexTop {
-	display: grid;
-	grid-template-columns: 1fr 0.7fr 1fr;
+	display: grid; /* CSS сетка */
+	grid-template-columns: 1fr 0.7fr 1fr; /* Количество и размер колонок CSS сетки */
 }
 
-div.topic {
-	/*Работа с конкретным элементом сетки*/
-	justify-self: center; /*Выравнивание по горизонтали*/
-	align-self: center; /*Выравнивание по вертикали*/
+#topic {
+	/* Работа с конкретным элементом сетки */
+	justify-self: center; /* Выравнивание по горизонтали */
+	align-self: center; /* Выравнивание по вертикали */
 }
 
-.abbreviations {
-	grid-row-start: 1;
+#abbreviations {
+	grid-row-start: 1; /* С какой строки(row) начинается элемент */
 	padding-top: 2%;
 	padding-left: 2%;
 	border-top: solid #eda024;
 	border-left: solid #eda024;
 }
+ 
+#abbreviations {
+	width: fit-content; /* Автозаполнение по ширине блока, учитывая размер контента*/
+	height: fit-content;
+}
 
-.abbreviations h4{
+#abbreviations h4{
 	margin-top: 0;
 }
 
-div.new, div.crime, div.cancel {
+.hide {
+	display: none;
+}
+
+#new, #crime, #cancel {
 	margin-top: 2%;
 	text-align: center;
 }
@@ -45,7 +69,7 @@ div.FlexItem {
 	display: flex;
 	justify-content: space-around; /* Равномерно распределяет все элементы по ширине flex-блока. Все элементы имеют полноразмерное пространство с обоих концов */
 	text-align: center;
-	
+	vertical-align:top;
 }
 
 img {
@@ -59,31 +83,37 @@ button {
 	max-height: 35px;
 }
 
-@media (min-width: 1400px) {
+
+/*
+max-width и min-width => Размер экрана Браузера
+
+max-device-width и min-device-width => Фактический размер экрана Устройства 
+
+*/
+
+/* Ширина экрана больше 1400px (ширина от 1400px) */
+@media screen and (min-width: 1400px) {
+	/* Фиксированный размер блока */
 	div.FlexItem>div {
 		max-width: 700px;
 		min-width: 700px;
 	}
 }
 
-@media (max-width: 1399px) {
+/* Ширина экрана меньше 1399px */
+@media screen and (max-width: 1399px) {
+	/* Смена направления блоков на горизонтальное (колонка) */
 	div.FlexItem {
 		flex-direction: column;
 	}
 }
-
 
 @media (max-width: 667px), only screen and (max-device-width: 667px) {
 	div.FlexTop{
 		grid-template-columns: 1fr;
 	}
 	
-	.topic {
+	#topic {
 		grid-row-start: -2;
 	}
-	
-	img {
-		height: 150px;
-	}
 }
-

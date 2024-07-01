@@ -16,51 +16,52 @@
 	<!-- Тело HTML документа -->
 	<body>
 		<!-- Блок Темы страницы -->
-		<div class="theme">
+		<div id="theme">
 			<h1>ОБЯЗАТЕЛЬНЫЕ УВЕДОМЛЕНИЯ РОСКОМНАДЗОРА</h1>
 		</div>
 		<div class="FlexTop">
-			<div class="topic">
+			<div id="topic">
 				<img src="img/RKN.svg">
 			</div>
-			<div class="abbreviations">
+			<div id="abbreviations">
 				<h4>Сокращения:</h4>
-				<p><b>ПДн – персональные данные</b> – любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту ПДн)</p>
-				<p><b>НКЦКИ</b> – Национальный координационный центр по компьютерным инцидентам</p>
-			</div>
-			
+				<p onclick="hideShow()"><b>ПДн</b><span class="hide hide1"><b> – персональные данные</b> – любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту ПДн)</span></p>
+				<p onclick="hideShow2()"><b>НКЦКИ</b><span class="hide hide2"> – Национальный координационный центр по компьютерным инцидентам</span></p>
+			</div>		
 		</div>
 		
-		<div class="new">
+		<div id="new">
 			<img alt="Новая обработка" src="img/new.svg" height="150px"><br>
 			<button>НОВАЯ ОБРАБОТКА ПДн</button>
 			<p>Намерение осуществлять обработку ПДн</p>
 		</div>
 				
 		<div class="FlexItem">
-			<div class="changes">
+			<div id="changes">
 				<img alt="Изменения" src="img/changes.svg" height="150px"><br>
 				<button>ИЗМЕНЕНИЯ</button>
 				<p>Уведомление об изменении сведений, содержащихся в уведомлении о намерении осуществлять обработку ПДн</p>
 			</div>
 			
-			<div class="transfer">
+			<div id="transfer">
 				<img alt="Передача ПДн за границу" src="img/transfer.svg" height="150px"><br>
 				<button>ПЕРЕДАЧА ПДн <br> ЗА ГРАНИЦУ</button>
 				<p>Намерение осуществлять трансграничную передачу ПДн</p>
 			</div>
 		</div>
-		<div class="crime">
+		<div id="crime">
 			<img alt="Нарушения" src="img/crime.svg" height="150px"><br>
 			<button>НАРУШЕНИЯ, ИНЦИДЕНТЫ</button>
-			<p>Уведомление о факте неправомерной или случайной передачи (предоставления, распространения, доступа) ПДн, повлекшей нарушение прав субъектов ПДн</p>
+			<p>Уведомление о факте неправомерной или случайной передачи <br>(предоставления, распространения, доступа) ПДн, повлекшей нарушение прав субъектов ПДн</p>
 		</div>
 			
-		<div class="cancel">
+		<div id="cancel">
 			<img alt="Прекращение обработки" src="img/cancel.svg" height="150px"><br>
 			<button>ПРЕКРАЩЕНИЕ ОБРАБОТКИ ПДн</button>
 			<p>Уведомление о прекращении обработки ПДн</p>
 		</div>
 		
+		
+		<script src="script/script.js"></script>
 	</body>
 </html>
