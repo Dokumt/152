@@ -45,11 +45,12 @@ div.FlexTop {
 	padding-left: 2%;
 	border-top: solid #eda024;
 	border-left: solid #eda024;
+	width: fit-content; /* Автозаполнение по ширине блока, учитывая размер контента*/
+	height: fit-content;
 }
  
 #abbreviations {
-	width: fit-content; /* Автозаполнение по ширине блока, учитывая размер контента*/
-	height: fit-content;
+	
 }
 
 #abbreviations h4{
