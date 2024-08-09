@@ -1,3 +1,7 @@
+<!-- 
+<section> - для группировки взаимосвязанного содержимого (разделы)
+<article> — для заключения обособленной части содержимого (элементы раздела) (новостная статья, пост в блоге)
+ -->
 <!DOCTYPE html>
 <html>
 	<!-- Заголовок HTML документа -->
@@ -11,63 +15,78 @@
 		rel - определяет отношения между текущим документом и файлом (stylesheet - подключаемый файл хранит таблицу стилей (CSS))
 		href - путь к файлу -->
 		<link rel="stylesheet" href="style/style.css">
+		
 	</head>
 	
 	<!-- Тело HTML документа -->
 	<body>
 		<!-- Блок Темы страницы -->
-		<div id="theme">
-			<h1>ОБЯЗАТЕЛЬНЫЕ УВЕДОМЛЕНИЯ РОСКОМНАДЗОРА</h1>
-		</div>
-		<div class="FlexTop">
-			<div id="topic">
-				<img src="img/RKN.svg">
+		<header>
+			<div id="theme">
+				<h1>ОБЯЗАТЕЛЬНЫЕ УВЕДОМЛЕНИЯ РОСКОМНАДЗОРА</h1>
 			</div>
-			<div id="abbreviations">
-				<h4>Сокращения:</h4>
-				<p onclick="hideShow()">
-					<span class="abbreviatura abb1"><b>ПДн</b></span>
-					<span class="hide hide1"><b> – персональные данные</b> – любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту ПДн)</span>
-				</p>
-				<p onclick="hideShow2()">
-					<span class="abbreviatura abb2"><b>НКЦКИ</b></span>
-					<span class="hide hide2"> – Национальный координационный центр по компьютерным инцидентам</span>
-				</p>
-			</div>		
-		</div>
-		
-		<div id="new">
-			<img alt="Новая обработка" src="img/new.svg" height="150px"><br>
-			<button>НОВАЯ ОБРАБОТКА ПДн</button>
-			<p>Намерение осуществлять обработку ПДн</p>
-		</div>
+			<div class="FlexTop">
+				<div id="topic">
+					<img src="img/RKN.svg">
+				</div>
+				<div id="abbreviations">
+					<h4>Сокращения:</h4>
+					<p class="hideShow1" onclick="hideShow()">
+						<span class="abbreviatura abb1"><b>ПДн</b></span>
+						<span class="hide hide1"><b> – персональные данные</b> – любая информация, относящаяся к прямо или косвенно определенному или определяемому <b>физическому лицу (субъекту ПДн)</b></span>
+					</p>
+					<p class="hideShow2" onclick="hideShow()">
+						<span class="abbreviatura abb2"><b>НКЦКИ</b></span>
+						<span class="hide hide2"> – Национальный координационный центр по компьютерным инцидентам</span>
+					</p>
+				</div>		
+			</div>
+		</header>
+		<section>
+			<article>
+				<div id="new">
+					<img alt="Новая обработка" src="img/new.svg" height="150px"><br>
+					<button>НОВАЯ ОБРАБОТКА ПДн</button>
+					<p>Намерение осуществлять обработку ПДн</p>
+				</div>
+			</article>
+			
+			<div class="FlexItem">
+				<article>
+					<div id="changes">
+						<img alt="Изменения" src="img/changes.svg" height="150px"><br>
+						<button>ИЗМЕНЕНИЯ</button>
+						<p>Уведомление об изменении сведений, содержащихся в уведомлении о намерении осуществлять обработку ПДн</p>
+					</div>
+				</article>
 				
-		<div class="FlexItem">
-			<div id="changes">
-				<img alt="Изменения" src="img/changes.svg" height="150px"><br>
-				<button>ИЗМЕНЕНИЯ</button>
-				<p>Уведомление об изменении сведений, содержащихся в уведомлении о намерении осуществлять обработку ПДн</p>
+				<article>
+					<div id="transfer">
+						<img alt="Передача ПДн за границу" src="img/transfer.svg" height="150px"><br>
+						<button>ПЕРЕДАЧА ПДн <br> ЗА ГРАНИЦУ</button>
+						<p>Намерение осуществлять трансграничную передачу ПДн</p>
+					</div>
+				</article>
 			</div>
 			
-			<div id="transfer">
-				<img alt="Передача ПДн за границу" src="img/transfer.svg" height="150px"><br>
-				<button>ПЕРЕДАЧА ПДн <br> ЗА ГРАНИЦУ</button>
-				<p>Намерение осуществлять трансграничную передачу ПДн</p>
-			</div>
-		</div>
-		<div id="crime">
-			<img alt="Нарушения" src="img/crime.svg" height="150px"><br>
-			<button>НАРУШЕНИЯ, ИНЦИДЕНТЫ</button>
-			<p>Уведомление о факте неправомерной или случайной передачи <br>(предоставления, распространения, доступа) ПДн, повлекшей нарушение прав субъектов ПДн</p>
-		</div>
+			<article>
+				<div id="crime">
+					<img alt="Нарушения" src="img/crime.svg" height="150px"><br>
+					<button>НАРУШЕНИЯ, ИНЦИДЕНТЫ</button>
+					<p>Уведомление о факте неправомерной или случайной передачи <br>(предоставления, распространения, доступа) ПДн, повлекшей нарушение прав субъектов ПДн</p>
+				</div>
+			</article>
 			
-		<div id="cancel">
-			<img alt="Прекращение обработки" src="img/cancel.svg" height="150px"><br>
-			<button>ПРЕКРАЩЕНИЕ ОБРАБОТКИ ПДн</button>
-			<p>Уведомление о прекращении обработки ПДн</p>
-		</div>
-		
+			<article>	
+				<div id="cancel">
+					<img alt="Прекращение обработки" src="img/cancel.svg" height="150px"><br>
+					<button>ПРЕКРАЩЕНИЕ ОБРАБОТКИ ПДн</button>
+					<p>Уведомление о прекращении обработки ПДн</p>
+				</div>
+			</article>
+		</section>
 		
 		<script src="script/script.js"></script>
+		<script src="script/test.js"></script>
 	</body>
 </html>
