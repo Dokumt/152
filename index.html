@@ -25,20 +25,26 @@
 			<div id="theme">
 				<h1>ОБЯЗАТЕЛЬНЫЕ УВЕДОМЛЕНИЯ РОСКОМНАДЗОРА</h1>
 			</div>
-			<div class="FlexTop">
+			<div class="CSSGridTop">
 				<div id="topic">
 					<img src="img/RKN.svg">
 				</div>
 				<div id="abbreviations">
 					<h4>Сокращения:</h4>
-					<p class="hideShow1" onclick="hideShow()">
-						<span class="abbreviatura abb1"><b>ПДн</b></span>
-						<span class="hide hide1"><b> – персональные данные</b> – любая информация, относящаяся к прямо или косвенно определенному или определяемому <b>физическому лицу (субъекту ПДн)</b></span>
-					</p>
-					<p class="hideShow2" onclick="hideShow()">
-						<span class="abbreviatura abb2"><b>НКЦКИ</b></span>
-						<span class="hide hide2"> – Национальный координационный центр по компьютерным инцидентам</span>
-					</p>
+					<div class="hideShow">
+						<img alt="Trigger" src="img/plus.svg" id="hideShow1" onclick="hideShow()">
+						<div class="hideShowText">
+							<span class="abbreviatura abb1"><b>ПДн</b></span>
+							<span class="hide hide1"><b> – персональные данные</b> – любая информация, относящаяся к прямо или косвенно определенному или определяемому <b>физическому лицу (субъекту ПДн)</b></span>
+						</div>
+					</div>
+					<div class="hideShow">
+						<img alt="Trigger" src="img/plus.svg" id="hideShow2" onclick="hideShow()">
+						<div class="hideShowText">
+							<span class="abbreviatura abb2"><b>НКЦКИ</b></span>
+							<span class="hide hide2"> – Национальный координационный центр по компьютерным инцидентам</span>
+						</div>
+					</div>
 				</div>		
 			</div>
 		</header>
@@ -84,6 +90,9 @@
 					<p>Уведомление о прекращении обработки ПДн</p>
 				</div>
 			</article>
+			
+			
+			
 		</section>
 		
 		<script src="script/script.js"></script>

@@ -33,7 +33,7 @@ body {
 	text-align: center; /* Горизонтальное выравнивание текста в пределах элемента. Применяется: ко всем элементам */
 }
 
-div.FlexTop {
+div.CSSGridTop {
 	display: grid; /* CSS сетка */
 	grid-template-columns: 1fr 0.7fr 1fr; /* Количество и размер колонок CSS сетки */
 }
@@ -59,10 +59,28 @@ div.FlexTop {
 	margin-top: 0;
 }
 
-.abbreviatura {
-	cursor: pointer;
+.hideShow {
+	display: flex;
+	margin-bottom: 15px;
 }
 
+.hideShowText {
+	align-self: center;
+	margin-left: 5px;
+}
+
+/* Настройка иконки триггера*/
+.hideShow img {
+	height: 40px;
+	cursor: pointer;
+	transition: transform 0.5s; /* Анимация трансформации*/
+}
+
+#hideShow1.clicked, #hideShow2.clicked {
+	transform: rotate(45deg); /* Трансформация (вращение)*/
+}
+
+/* Настройка скрытого текста*/
 .hide {
 	display: none;
 	visibility: collapse;
@@ -73,6 +91,7 @@ div.FlexTop {
 	display: inline;
 	visibility: visible;
 }
+
 
 @keyframes fadeInOut { 
     0% { 
@@ -99,6 +118,8 @@ div.FlexItem {
 img {
 	height: 150px;
 }
+
+
 
 button {
 	cursor: pointer;
@@ -155,7 +176,7 @@ max-device-width и min-device-width => Фактический размер эк
 }
 
 @media (max-width: 667px), only screen and (max-device-width: 667px) {
-	div.FlexTop{
+	div.CSSGridTop{
 		grid-template-columns: 1fr;
 	}
 	
