@@ -7,7 +7,7 @@ var AbbreviatureArray = 	{
 								hideShow2: document.getElementsByClassName("hide2")[0]
 							};
 
-function hideShow() {	
+function AbbHideShow() {	
 	/*
 	Object.keys(AbbreviatureArray) - массив индексов объекта AbbreviatureArray
 	event.currentTarget.id - id элемента, по которому кликнули
@@ -19,10 +19,15 @@ function hideShow() {
 	
 	AbbreviatureArray[event.currentTarget.id] - Выбираем объект по нажатому элементу (id)
 										  .classList - Позволяет взаимодействовать с классом
-										  .toggle    - добавить или удалить класс
+										  .toggle    - добавить или удалить (переключить) класс
 	*/
 	if (Object.keys(AbbreviatureArray).find(e => e === event.currentTarget.id)) {
 		document.getElementById(event.currentTarget.id).classList.toggle("clicked");
 		AbbreviatureArray[event.currentTarget.id].classList.toggle("clicked");
 	}
+}
+
+function ArticleHideShow(block) {
+	event.currentTarget.classList.toggle("active");
+	document.getElementsByClassName(block)[0].classList.toggle("show");
 }
