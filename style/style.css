@@ -26,7 +26,7 @@ div > h1 - наследует только те (дочерний элемент
 body {
 	color: #000; /* Цвет текста */
 	background: linear-gradient(90deg, rgba(191,191,191,1) 0%, rgba(215,215,215,1) 50%, rgba(191,191,191,1) 100%);
-	font: medium Tahoma, sans-serif; /*Размер шрифта и Семейство шрифтов */
+	font: large Tahoma, sans-serif; /*Размер шрифта и Семейство шрифтов */
 }
 
 #theme h1{
