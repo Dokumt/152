@@ -24,12 +24,13 @@ div > h1 - наследует только те (дочерний элемент
 в результате чего он смещается вниз до тех пор, пока справа, слева или с обеих сторон не будет никаких плавающих элементов.
 */
 body {
-	
+	color: #000; /* Цвет текста */
+	background: linear-gradient(90deg, rgba(191,191,191,1) 0%, rgba(215,215,215,1) 50%, rgba(191,191,191,1) 100%);
 	font: medium Tahoma, sans-serif; /*Размер шрифта и Семейство шрифтов */
 }
 
 #theme h1{
-	color: #000; /* Цвет текста */
+	
 	text-align: center; /* Горизонтальное выравнивание текста в пределах элемента. Применяется: ко всем элементам */
 }
 
@@ -75,11 +76,15 @@ div.CSSGridTop {
 	cursor: pointer;
 	transition: transform 0.5s; /* Анимация трансформации*/
 }
-
-#hideShow1.clicked, #hideShow2.clicked {
-	transform: rotate(45deg); /* Трансформация (вращение)*/
+.hideShow img.clicked {
+	transform: rotate(45deg);/* Трансформация (вращение)*/
 }
 
+/*заменена на .hideShow img.clicked
+#hideShow1.clicked, #hideShow2.clicked {
+	transform: rotate(45deg); 
+}
+*/
 /* Настройка скрытого текста*/
 .hide {
 	display: none;
@@ -103,10 +108,39 @@ div.CSSGridTop {
     } 
 }
 
+#new, #changes, #transfer, #crime {
+	margin-bottom: 50px;
+}
+
 #new, #crime, #cancel {
 	margin-top: 2%;
 	text-align: center;
 }
+
+.changes p {
+	text-align: left;
+}
+
+.transfer div {
+	text-align: justify;
+	margin-bottom: 1%;
+}
+
+.transfer div:nth-child(even) {
+	margin-right: 20%;
+}
+
+.transfer div:nth-child(odd) {
+	margin-left: 20%;
+}
+
+
+/*
+section {
+	text-align: center;
+}
+*/
+
 
 div.FlexItem {
 	display: flex;
@@ -115,6 +149,19 @@ div.FlexItem {
 	vertical-align:top;
 }
 
+article > div {
+	max-width: 700px;
+	margin: auto;
+	
+}
+
+.content {
+	display: none;
+}
+
+.content.show {
+	display: block;
+}
 img {
 	height: 150px;
 }
@@ -146,9 +193,12 @@ button {
 */
 
 
-button:hover {
+button:hover, button.active {
 	transition: 0.75s ease;
 	background-color: #F4581E;
+}
+
+button.active {
 	border-color: rgba(0, 0, 0, 1);
 }
 
@@ -162,7 +212,7 @@ max-device-width и min-device-width => Фактический размер эк
 /* Ширина экрана больше 1400px (ширина от 1400px) */
 @media screen and (min-width: 1400px) {
 	/* Фиксированный размер блока */
-	div.FlexItem div {
+	.FlexItem article {
 		width: 700px;
 	}
 }
