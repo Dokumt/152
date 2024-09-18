@@ -23,14 +23,20 @@ div > h1 - наследует только те (дочерний элемент
 Исключение составляет тот случай, когда вы задаете свойство clear для блочного элемента, 
 в результате чего он смещается вниз до тех пор, пока справа, слева или с обеих сторон не будет никаких плавающих элементов.
 */
+@font-face {
+	font-family: "Duepuntozero";  
+	src: url("fonts/Duepuntozero Pro Regular.otf") format("opentype"); 
+	font-style: normal; 
+	font-weight: normal;
+}
+
 body {
 	color: #000; /* Цвет текста */
 	background: linear-gradient(90deg, rgba(191,191,191,1) 0%, rgba(215,215,215,1) 50%, rgba(191,191,191,1) 100%);
-	font: large Tahoma, sans-serif; /*Размер шрифта и Семейство шрифтов */
+	font: 21px Duepuntzero, tahoma, sans-serif; /*Размер шрифта и Семейство шрифтов */
 }
 
 #theme h1{
-	
 	text-align: center; /* Горизонтальное выравнивание текста в пределах элемента. Применяется: ко всем элементам */
 }
 
@@ -170,12 +176,14 @@ img {
 
 button {
 	cursor: pointer;
-	width: 230px;
+	width: 260px;
 	height: 40px;
+	font: 17px Duepuntozero;
 	font-weight: bold;
 	background-color: #ff9b7a;
 	border: 3px solid rgba(0, 0, 0, 0); /* Сокращенная запись, порядок параметров может быть любым */
-	border-radius: 20px; /* Закругление углов границы */	
+	border-radius: 20px; /* Закругление углов границы */
+	padding-bottom: 1%;
 }
 /*
 .button::before {
